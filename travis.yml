@@ -6,7 +6,7 @@ before_install:
   # Importent Build-Config
   - export DEVICE=j2lte
   - export TCLINK=https://github.com/kdrag0n/proton-clang
-  - export OFOLDER=$PWD/arch/arm/boot
+  - export OFOLDER=$PWD/arch/arm64/boot
   ##
   - git clone $TCLINK toolchain
   - export CROSS_COMPILE=$PWD/toolchain/bin/arm-eabi-
