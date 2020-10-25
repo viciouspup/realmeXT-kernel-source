@@ -1,4 +1,4 @@
-language: C
+language:C
 dist: trusty
 
 before_install:
@@ -28,7 +28,7 @@ script:
 deploy:
   provider: releases
   file: "$OFOLDER/zImage"
-  skip_cleanup: true
+  cleanup: true
   on:
 tags: true
 all_branches: true
