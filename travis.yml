@@ -5,7 +5,7 @@ before_install:
   
   # Importent Build-Config
   - export DEVICE=RMX1921
-  - export TCLINK=https://github.com/djb77/aarch64-linux-android-4.9
+  - export TCLINK=https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
   - export OFOLDER=$PWD/arch/arm64/boot
   ##
   - git clone $TCLINK toolchain
