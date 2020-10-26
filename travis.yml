@@ -20,7 +20,7 @@ install: true
 
 script:
   # compiling commands (main)
-  - make RMX1921_defconfig
+  - make ranchu64_defconfig
   - make
   # this part uploads output to a cloud
   - cd $OFOLDER
