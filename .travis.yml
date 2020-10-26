@@ -1,0 +1,35 @@
+language: C
+dist: trusty
+
+before_install:
+  
+  # Importent Build-Config
+  - export DEVICE=RMX1921
+  - export TCLINK=https://github.com/djb77/aarch64-linux-android-4.9
+  - export OFOLDER=$PWD/arch/arm64/boot
+  ##
+  - git clone $TCLINK toolchain
+  - export ARCH=arm64
+  - export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
+  - sudo apt-get -qq update
+  - sudo apt-get install -y build-essential kernel-package libncurses5-dev bzip2 curl
+
+# we're not installing anything
+
+install: true
+
+script:
+  # compiling commands (main)
+  - make ranchu64_defconfig
+  - make
+  # this part uploads output to a cloud
+  - cd $OFOLDER
+  - echo "Uploading Output" && curl --upload-file zImage https://transfer.sh
+
+deploy:
+  provider: releases
+  file: "$OFOLDER/zImage"
+  cleanup: true
+  on:
+#tags: true
+#all_branches: true
