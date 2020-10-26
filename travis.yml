@@ -5,11 +5,11 @@ before_install:
   
   # Importent Build-Config
   - export DEVICE=RMX1921
-  - export TCLINK=https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9
+  - export TCLINK=https://github.com/djb77/aarch64-linux-android-4.9
   - export OFOLDER=$PWD/arch/arm64/boot
   ##
   - git clone $TCLINK toolchain
-  - export CROSS_COMPILE=$PWD/toolchain/bin/arm-eabi-
+  - export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
   - sudo apt-get -qq update
   - sudo apt-get install -y build-essential kernel-package libncurses5-dev bzip2 curl
 
