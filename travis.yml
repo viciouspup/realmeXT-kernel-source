@@ -4,7 +4,7 @@ dist: trusty
 before_install:
   
   # Importent Build-Config
-  - export DEVICE=j2lte
+  - export DEVICE=RMX1921
   - export TCLINK=https://github.com/djb77/aarch64-linux-android-4.9
   - export OFOLDER=$PWD/arch/arm64/boot
   ##
