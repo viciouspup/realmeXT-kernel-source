@@ -9,7 +9,7 @@ before_install:
   - export TCLINK=https://github.com/djb77/aarch64-linux-android-4.9
   - export OFOLDER=$PWD/arch/arm64/boot
   ##
-  - git clone $TCLINK toolchain
+ # - git clone $TCLINK toolchain
   - export ARCH=arm64
   - export CROSS_COMPILE=${PWD}/toolchain/bin/aarch64-linux-android-
   - sudo apt-get -qq update
