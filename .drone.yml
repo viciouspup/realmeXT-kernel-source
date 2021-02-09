@@ -1,0 +1,24 @@
+kind: pipeline
+name: kernel_realme_sdm710
+
+platform:
+  os: linux
+  arch: amd64
+
+clone:
+  depth: 1
+
+steps:
+  - name: spiral_kernel
+    image: ubuntu:latest
+    environment:
+      CI_CHANNEL_ID:
+        from_secret: CI_CHANNEL_ID
+      BOT_API_KEY:
+        from_secret: BOT_API_KEY
+      RELEASE_VERSION:
+    commands:
+      - apt-get update && apt-get install -y bison build-essential bc bison curl libssl-dev git zip python flex
+      -  git clone --depth=1 https://github.com/viciouspup/Drone-scripts.git script && cd script
+      - bash setup-drone.sh --proton
+      - bash build-kernel.sh --proton
